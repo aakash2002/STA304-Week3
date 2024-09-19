@@ -1,8 +1,8 @@
 #### Preamble ####
 # Purpose: Simulates data
-# Author: Rohan Alexander
+# Author: Aakash Vaithyanathan
 # Date: 19 September 2024
-# Contact: rohan.alexander@utoronto.ca
+# Contact: aakash.vaithyanathan@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: None
 # Any other information needed? None
@@ -13,7 +13,7 @@ library(tidyverse)
 
 
 #### Simulate data ####
-set.seed(304)
+set.seed(1890)
 
 # Define the start and end date
 start_date <- as.Date("2018-01-01")
@@ -30,9 +30,9 @@ data <-
         min = as.numeric(start_date),
         max = as.numeric(end_date)
       ),
-      origin = "1970-01-01"
+      origin = "2018-01-01"
     ),
-    number_of_marriage = rpois(n = number_of_dates, lambda = 15)
+    number_of_marriage = rpois(n = number_of_dates, lambda = 10)
   )
 
 

@@ -1,12 +1,11 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Anlysis of Marriage Licenses Issued between 2011 to 2024"
 author: 
-  - Rohan Alexander
+  - Aakash Vaithyanathan
 thanks: "Code and data are available at: LINK."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "Study of marriage license issued by month between the month of 2011 and 2024 for various provinces in Canada."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -26,37 +25,30 @@ data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
 
 # Introduction
 
-You can and should cross-reference sections and sub-sections. We use @talia, @opendatatorotno, and @rohan.
+We use @R, @ggplot2, and @opendatatoronto in this project.
 
 The remainder of this paper is structured as follows. @sec-mydatasection
 
 
 
 # Data {#sec-mydatasection}
-
-Some of our data is of penguins (@fig-marriage), from @palmerpenguins.
-
 ```{r}
 #| label: fig-marriage
-#| fig-cap: Bills of penguins
+#| fig-cap: Number of Marriage Licences Issued by Month
 #| echo: false
 
 data |> 
-  ggplot(aes(x = date, y = marriage_licenses)) +
-  geom_point()
+  ggplot(aes(x = month, y = marriage_licenses)) +
+  geom_bar(stat="identity") +
+  ggtitle("Bar plot of marriage licenses issued from 2011 to 2024 by Month") +
+  xlab("Month") +
+  ylab("Total Marriage Licences Issued")
 
 ```
 
-Talk more about it.
-
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
-
-
-
-
 
 # Discussion
-
+The above graph was generated using data from @R, @ggplot2, and @opendatatoronto. The graph shows the total number of issued marriage licences between the years of 2021 and 2024 for every month.
 ## First discussion point {#sec-first-point}
 
 If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
@@ -84,5 +76,4 @@ Weaknesses and next steps should also be included.
 
 
 # References
-
 
